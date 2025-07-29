@@ -31,7 +31,7 @@ try {
   console.log("Email:", newCustomer.email.value); // "joao.silva@email.com"
   console.log("Endereço completo:", newCustomer.address.getFullAddress());
   console.log("Status ativo:", newCustomer.isActive);
-} catch (error) {
+} catch (error: any) {
   console.error("Erro ao criar customer:", error.message);
 }
 
@@ -57,7 +57,7 @@ try {
 
   const existingCustomer = CustomerEntity.fromPersistence(existingCustomerData);
   console.log("Customer reconstruído:", existingCustomer.getFullInfo());
-} catch (error) {
+} catch (error: any) {
   console.error("Erro ao reconstruir customer:", error.message);
 }
 
@@ -107,7 +107,7 @@ try {
   // Reativando customer
   customer.activate();
   console.log("Customer ativo após reativação?", customer.isActive);
-} catch (error) {
+} catch (error: any) {
   console.error("Erro nas operações de domínio:", error.message);
 }
 
@@ -123,7 +123,7 @@ try {
     zipCode: "01234567",
     country: "Brasil",
   });
-} catch (error) {
+} catch (error: any) {
   console.log("Erro esperado - Email inválido:", error.message);
 }
 
@@ -136,7 +136,7 @@ try {
     zipCode: "01234567",
     country: "Brasil",
   });
-} catch (error) {
+} catch (error: any) {
   console.log("Erro esperado - Nome muito curto:", error.message);
 }
 
@@ -149,7 +149,7 @@ try {
     zipCode: "123", // CEP inválido
     country: "Brasil",
   });
-} catch (error) {
+} catch (error: any) {
   console.log("Erro esperado - CEP inválido:", error.message);
 }
 
